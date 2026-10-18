@@ -236,6 +236,25 @@
   .founder p:last-of-type{color:var(--fg);}
 
   /* PANEL */
+  /* PROJETOS */
+  .project{display:grid; grid-template-columns:0.9fr 1.1fr; gap:56px; align-items:center;}
+  @media (max-width:980px){ .project{grid-template-columns:1fr; gap:40px;} }
+  .project-tag{display:inline-block; font-family:'JetBrains Mono',monospace; font-size:12.5px; color:var(--cyan); border:1px solid var(--line-2); border-radius:999px; padding:5px 12px;}
+  .project h3{font-size:30px; margin:16px 0 12px;}
+  .project p{font-size:16px; color:var(--muted); line-height:1.65; margin:0 0 20px;}
+  .project ul{list-style:none; padding:0; margin:0 0 24px; display:grid; gap:10px;}
+  .project li{font-size:15px; color:var(--fg); padding-left:22px; position:relative; line-height:1.5;}
+  .project li::before{content:'→'; position:absolute; left:0; color:var(--cyan); font-family:'JetBrains Mono',monospace;}
+  .project-shots{position:relative; padding:0 0 48px 0;}
+  .browser{background:var(--panel-2); border:1px solid var(--line-2); border-radius:12px; overflow:hidden; box-shadow:0 30px 80px -30px rgba(34,211,238,.25);}
+  .browser .bar{display:flex; gap:6px; padding:10px 12px; border-bottom:1px solid var(--line);}
+  .browser .bar span{width:9px; height:9px; border-radius:50%; background:var(--line-2);}
+  .browser img, .phone img{display:block; width:100%; height:auto;}
+  .phone{position:absolute; right:-12px; bottom:0; width:30%; max-width:200px; border:6px solid #1a1d26; border-radius:22px; overflow:hidden; background:#1a1d26; box-shadow:0 24px 60px -18px rgba(0,0,0,.8);}
+  @media (max-width:560px){ .phone{right:0; width:36%;} }
+  .project-gallery{display:grid; grid-template-columns:1fr; margin-top:28px;}
+  .shots-note{font-size:12.5px; color:var(--muted-2); font-family:'JetBrains Mono',monospace; margin-top:14px;}
+
   .panel-shell{
     background:var(--panel); border:1px solid var(--line); border-radius:20px; padding:36px;
   }
@@ -333,6 +352,7 @@
       <a href="#problema" data-scroll="problema">Problema</a>
       <a href="#metodo" data-scroll="metodo">Método</a>
       <a href="#paraquem" data-scroll="paraquem">Para quem</a>
+      <a href="#projetos" data-scroll="projetos">Projetos</a>
       <a href="#faq" data-scroll="faq">FAQ</a>
     </nav>
     <div class="head-right">
@@ -471,11 +491,55 @@
   </div>
 </section>
 
-<section class="section" id="fundador">
+<section class="section" id="projetos">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">05 · Projetos</span>
+      <h2>Do papel para a operação real.</h2>
+      <p>Um dos sistemas desenvolvidos pela Nexus, do zero, já pronto para uso.</p>
+    </div>
+    <div class="project reveal">
+      <div>
+        <span class="project-tag">SaaS · Barbearias</span>
+        <h3>BarberFlow</h3>
+        <p>Sistema de gestão completo para barbearias: a equipe organiza a agenda, o dono acompanha o faturamento e o cliente agenda sozinho pelo celular, sem precisar ligar ou mandar mensagem.</p>
+        <ul>
+          <li>Agendamento online com link próprio, mostrando só horários livres</li>
+          <li>Agenda por profissional, cadastro de clientes e serviços</li>
+          <li>Financeiro automático: receita e comissão geradas a cada atendimento</li>
+          <li>Painel com faturamento, ticket médio, despesas e lucro do mês</li>
+          <li>Assistente de IA que responde perguntas sobre o negócio</li>
+          <li>Planos de assinatura com pagamento online</li>
+        </ul>
+        <a class="btn btn-outline" href="#cta" data-scroll="cta">Quero um sistema assim</a>
+      </div>
+      <div>
+        <div class="project-shots">
+          <div class="browser">
+            <div class="bar"><span></span><span></span><span></span></div>
+            <img src="img/barberflow-painel.jpg" width="1440" height="900" loading="lazy" alt="Painel do BarberFlow com faturamento do dia, da semana e do mês, ticket médio e gráfico dos últimos 14 dias">
+          </div>
+          <div class="phone">
+            <img src="img/barberflow-agendamento-online.jpg" width="780" height="1688" loading="lazy" alt="Página de agendamento online do BarberFlow no celular, com a lista de serviços e preços">
+          </div>
+        </div>
+        <div class="project-gallery">
+          <div class="browser">
+            <div class="bar"><span></span><span></span><span></span></div>
+            <img src="img/barberflow-agenda.jpg" width="1440" height="900" loading="lazy" alt="Agenda do dia no BarberFlow, com horário, cliente, profissional, serviço e status de cada atendimento">
+          </div>
+        </div>
+        <div class="shots-note">// telas reais do sistema, com dados de demonstração</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="fundador">
   <div class="wrap founder reveal">
     <div class="avatar"></div>
     <div>
-      <span class="eyebrow">05 · Quem está por trás</span>
+      <span class="eyebrow">06 · Quem está por trás</span>
       <h3 style="margin-top:16px;">João Pedro</h3>
       <div class="role">Fundador da Nexus Sistemas</div>
       <p>A Nexus Sistemas nasceu com uma ideia simples: usar tecnologia para resolver problemas reais de empresas.</p>
@@ -485,11 +549,12 @@
   </div>
 </section>
 
-<section class="section alt" id="painel">
+<section class="section" id="painel">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">06 · Painel ao vivo</span>
+      <span class="eyebrow">07 · Exemplo de painel</span>
       <h2>Tenha sua operação na palma da mão.</h2>
+      <p>Um exemplo do tipo de painel que a Nexus constrói: os números do seu negócio, em tempo real, num lugar só. Os valores abaixo são simulados, só para demonstração.</p>
     </div>
     <div class="panel-shell reveal">
       <div class="metrics">
@@ -500,7 +565,7 @@
         <div class="metric"><div class="label">Conversão de leads</div><div class="val" data-min="18" data-max="42" data-suffix="%">—</div></div>
         <div class="metric"><div class="label">Tarefas concluídas</div><div class="val" data-min="85" data-max="98" data-suffix="%">—</div></div>
       </div>
-      <span class="badge">▲ +38% este mês</span>
+      <span class="badge">● Dados simulados</span>
       <div class="chart-wrap">
         <svg viewBox="0 0 600 120" width="100%" height="120" preserveAspectRatio="none">
           <defs>
@@ -517,10 +582,10 @@
   </div>
 </section>
 
-<section class="section" id="faq">
+<section class="section alt" id="faq">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">07 · FAQ</span>
+      <span class="eyebrow">08 · FAQ</span>
       <h2>Perguntas frequentes</h2>
     </div>
     <div class="reveal" style="max-width:820px;">
@@ -552,9 +617,9 @@
   </div>
 </section>
 
-<section class="section alt" id="cta">
+<section class="section" id="cta">
   <div class="wrap cta-final reveal">
-    <span class="eyebrow">08 · Vamos começar</span>
+    <span class="eyebrow">09 · Vamos começar</span>
     <h2>Sua próxima solução pode começar aqui.</h2>
     <p>Conte para a Nexus o que você precisa. Vamos entender o problema e transformar sua ideia em uma solução digital.</p>
 
@@ -570,12 +635,14 @@
         </div>
         <div class="form-row">
           <div class="field">
-            <label>Volume de leads/mês</label>
-            <select id="f-volume">
-              <option value="Não sei dizer">Não sei dizer</option>
-              <option value="Menos de 20">Menos de 20</option>
-              <option value="20 a 100">20 a 100</option>
-              <option value="Mais de 100">Mais de 100</option>
+            <label>Tipo de projeto</label>
+            <select id="f-tipo">
+              <option value="Ainda não sei">Ainda não sei</option>
+              <option value="Sistema de gestão / uso interno">Sistema de gestão / uso interno</option>
+              <option value="Plataforma ou SaaS">Plataforma ou SaaS</option>
+              <option value="Aplicativo">Aplicativo</option>
+              <option value="Automação de processos">Automação de processos</option>
+              <option value="Site ou landing page">Site ou landing page</option>
             </select>
           </div>
           <div class="field"><label>Principal dificuldade</label><input type="text" id="f-dificuldade" placeholder="O que mais te trava hoje?"></div>
@@ -763,7 +830,7 @@
     var whats = document.getElementById('f-whats').value.trim();
     var empresa = document.getElementById('f-empresa').value.trim();
     var segmento = document.getElementById('f-segmento').value.trim();
-    var volume = document.getElementById('f-volume').value;
+    var tipo = document.getElementById('f-tipo').value;
     var dificuldade = document.getElementById('f-dificuldade').value.trim();
 
     var msg = "Olá, gostaria de mais informações...\n\n" +
@@ -771,7 +838,7 @@
       "WhatsApp: " + whats + "\n" +
       (empresa ? "Empresa/Instagram: " + empresa + "\n" : "") +
       (segmento ? "Segmento: " + segmento + "\n" : "") +
-      "Volume de leads/mês: " + volume + "\n" +
+      "Tipo de projeto: " + tipo + "\n" +
       (dificuldade ? "Principal dificuldade: " + dificuldade : "");
 
     var url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(msg);
